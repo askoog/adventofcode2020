@@ -1,0 +1,21 @@
+package se.askware.aoc2020.template;
+
+import java.io.IOException;
+import java.util.List;
+
+import se.askware.aoc2020.common.AocBase;
+
+public class Assignment extends AocBase {
+
+	public static void main(String[] args) throws IOException {
+		new Assignment().run();
+	}
+
+	@Override
+	public void solvePartTwo(List<String> readLines) {
+	}
+
+	@Override
+	public void solvePartOne(List<String> input) {
+	}
+}
