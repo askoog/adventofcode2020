@@ -10,6 +10,7 @@ import org.apache.commons.io.IOUtils;
 public abstract class AocBase {
 
 	protected List<String> input;
+	protected List<String> example;
 	 
 	public AocBase() {
 		try {
@@ -17,9 +18,17 @@ public abstract class AocBase {
 		} catch (IOException e) {
 			throw new UncheckedIOException(e);
 		}
+		try {
+			example = IOUtils.readLines(getClass().getResourceAsStream("example.txt"), StandardCharsets.UTF_8);
+		} catch (Exception e) {
+		}
 	}
 
 	public void run() {
+		if (example != null) {
+			System.out.println("** example **");
+			solvePartOne(example);
+		}
 		System.out.println("** part one **");
 		solvePartOne(input);
 		System.out.println("** part two **");

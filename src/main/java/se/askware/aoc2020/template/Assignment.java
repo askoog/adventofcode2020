@@ -12,10 +12,11 @@ public class Assignment extends AocBase {
 	}
 
 	@Override
-	public void solvePartTwo(List<String> readLines) {
+	public void solvePartOne(List<String> input) {
 	}
 
 	@Override
-	public void solvePartOne(List<String> input) {
+	public void solvePartTwo(List<String> readLines) {
 	}
+
 }
