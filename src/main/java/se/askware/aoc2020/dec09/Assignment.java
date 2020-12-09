@@ -19,22 +19,23 @@ public class Assignment extends AocBase {
 			long current = Long.parseLong(input.get(i));
 			if (i >= preamble) {
 				boolean found = false;
+				outer:
 				for (int j = 0; j < preamble; j++) {
 					for (int k = 0; k < preamble; k++) {
 						if (lastSums[j][k+1] == current) {
 							found = true;
-							break;
+							break outer;
 						}
 					}
 				}
 				if (!found ) {
 					System.out.println("not found: " + current);
-					for (int j = 0; j < lastSums.length; j++) {
-						for (int k = 0; k < lastSums[j].length; k++) {
-							System.out.print(String.format("%-3d ", lastSums[j][k]));
-						}
-						System.out.println();
-					}
+//					for (int j = 0; j < lastSums.length; j++) {
+//						for (int k = 0; k < lastSums[j].length; k++) {
+//							System.out.print(String.format("%-3d ", lastSums[j][k]));
+//						}
+//						System.out.println();
+//					}
 				}
 			}
 			lastSums[i%preamble][0] = current;
