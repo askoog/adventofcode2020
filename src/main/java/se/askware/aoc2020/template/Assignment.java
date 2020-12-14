@@ -16,7 +16,7 @@ public class Assignment extends AocBase {
 	}
 
 	@Override
-	public void solvePartTwo(List<String> readLines) {
+	public void solvePartTwo(List<String> input) {
 	}
 
 }

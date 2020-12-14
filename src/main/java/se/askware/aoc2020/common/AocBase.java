@@ -11,6 +11,7 @@ public abstract class AocBase {
 
 	protected List<String> input;
 	protected List<String> example;
+	protected List<String> example2;
 	 
 	public AocBase() {
 		try {
@@ -22,6 +23,10 @@ public abstract class AocBase {
 			example = IOUtils.readLines(getClass().getResourceAsStream("example.txt"), StandardCharsets.UTF_8);
 		} catch (Exception e) {
 		}
+		try {
+			example2 = IOUtils.readLines(getClass().getResourceAsStream("example2.txt"), StandardCharsets.UTF_8);
+		} catch (Exception e) {
+		}
 	}
 
 	public void run() {
@@ -31,6 +36,13 @@ public abstract class AocBase {
 		}
 		System.out.println("** part one **");
 		solvePartOne(input);
+		if (example2 != null) {
+			System.out.println("** example two **");
+			solvePartTwo(example2);
+		} else if (example != null) {
+			System.out.println("** example two **");
+			solvePartTwo(example);
+		}
 		System.out.println("** part two **");
 		solvePartTwo(input);
 	}
